@@ -1,0 +1,25 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Navigation from "../components/Navigation.astro";
+
+export interface Props {
+  title: string;
+  description: string;
+  permalink: string;
+}
+const { title, description, permalink } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fi">
+  <head>
+    <BaseHead {title} {description} {permalink} />
+  </head>
+  <body>
+    <Navigation />
+    <slot />
+    <footer class="w-full bottom-0 p-4 bg-slate-900 text-slate-100 text-center">
+      <p>&copy; 2023 HÖTÖPÖLLÖ. Tehty ❤️:lla.</p>
+    </footer>
+  </body>
+</html>

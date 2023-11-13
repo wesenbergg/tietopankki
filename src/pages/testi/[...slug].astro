@@ -1,0 +1,58 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import CourseChapterLayout from "../../layouts/CourseChapterLayout.astro";
+
+export const getStaticPaths = async () => {
+  const posts = await getCollection("testi");
+
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+};
+type Props = CollectionEntry<"testi">;
+
+const { collection, render } = Astro.props;
+
+const { Content, headings } = await render();
+---
+
+<CourseChapterLayout title={collection} {headings}>
+  <article class="md:ml-64 max-md:pl-8 lg:mr-64 max-lg:pr-8 pb-8">
+    <Content />
+  </article>
+</CourseChapterLayout>
+
+<style is:inline>
+  article {
+    min-height: calc(100vh - 64px);
+    > h1 {
+      font-size: x-large;
+      padding: 1rem 0;
+    }
+    > h2 {
+      font-size: large;
+      padding: 1rem 0;
+    }
+    > ol {
+      list-style: numeric;
+    }
+    > ol > li > ol {
+      list-style-type: lower-alpha;
+    }
+    > ul,
+    > ol,
+    > ol ol,
+    > ol ul,
+    > ul ul,
+    > ul ol {
+      padding-left: 1.5rem;
+    }
+    > ul {
+      list-style-type: disc;
+    }
+    > p {
+      padding-bottom: 1rem;
+    }
+  }
+</style>

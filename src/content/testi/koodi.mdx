@@ -1,0 +1,83 @@
+---
+title: 'Koodiesimerkki'
+pubDate: 'Oct 10 2023'
+---
+
+# Koodiesimerkki
+
+```html
+<script>
+  let specialties = [
+    "Homemade Pies",
+    "Artisanal Cakes",
+    "Freshly Baked Cookies",
+  ];
+
+  let visitInfo = {
+    location: "456 Sweet Street",
+    hours: "Open daily from 9 AM to 7 PM",
+  };
+</script>
+
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    background-color: #ff6f61;
+    color: white;
+    text-align: center;
+    padding: 1em;
+  }
+
+  section {
+    margin: 2em;
+  }
+
+  h2 {
+    color: #ff6f61;
+  }
+
+  p {
+    line-height: 1.6;
+  }
+
+  footer {
+    background-color: #4a4a4a;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+</style>
+
+<main>
+  <header>
+    <h1>Welcome to Mama's Bakery</h1>
+    <p>Delight in the taste of home!</p>
+  </header>
+
+  <section>
+    <h2>Our Specialties</h2>
+    {#each specialties as specialty}
+      <p>{specialty}</p>
+    {/each}
+  </section>
+
+  <section>
+    <h2>Visit Us</h2>
+    <p>{visitInfo.location}</p>
+    <p>{visitInfo.hours}</p>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2023 Mama's Bakery. Made with love.</p>
+</footer>
+```
