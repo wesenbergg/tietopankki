@@ -7,8 +7,7 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://wesenbergg.github.io",
-  base: "/tietopankki",
+  site: "https://koodi.lol",
   integrations: [
     svelte(),
     tailwind(),
