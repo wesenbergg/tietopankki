@@ -5,18 +5,18 @@ import generateToc from "../utils/generateToc.ts";
 import { getCollection } from "astro:content";
 import CourseContents from "../components/client/CourseContents.svelte";
 import Layout from "./Layout.astro";
+import ArticleNavigation from "../components/ArticleNavigation.astro";
 
 export interface Props {
-  title: string;
-  description: string;
-  permalink: string;
+  title?: string;
+  description?: string;
   headings: MarkdownHeading[];
 }
-const { title, description, permalink, headings } = Astro.props;
+const { title, description, headings } = Astro.props;
 const toc = generateToc(headings);
 
 const getCourseNav = async () => {
-  const posts = await getCollection(title);
+  const posts = await getCollection("testi");
 
   return posts.map((post) => ({
     id: post.id,
@@ -29,8 +29,12 @@ const getCourseNav = async () => {
 let chapters = await getCourseNav();
 ---
 
-<Layout {title} {description} {permalink}>
+<Layout {title} {description}>
   <CourseContents {chapters} />
   <TableOfContents client:idle {toc} />
-  <slot />
+  <article class="md:ml-64 max-md:pl-8 lg:mr-64 max-lg:pr-8 pb-8">
+    <ArticleNavigation {title} {chapters}>
+      <slot />
+    </ArticleNavigation>
+  </article>
 </Layout>
