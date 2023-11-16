@@ -1,9 +1,21 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("101-git");
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Tervetuloa 101 Git kurssille!">
   <main>
     <h1>Git Perusteet</h1>
+    <ul>
+      {
+        posts.map((p) => (
+          <li>
+            <a href={`${p.slug}`}>{p.data.title}</a>
+          </li>
+        ))
+      }
+    </ul>
   </main>
 </Layout>

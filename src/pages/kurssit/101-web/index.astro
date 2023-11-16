@@ -5,14 +5,14 @@ import { getCollection } from "astro:content";
 const posts = await getCollection("101-web");
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Tervetuloa 101 Web kurssille!">
   <main>
     <h1>Web Perusteet</h1>
     <ul>
       {
         posts.map((p) => (
           <li>
-            <a href={`101-web/${p.slug}`}>{p.data.title}</a>
+            <a href={`${p.slug}`}>{p.data.title}</a>
           </li>
         ))
       }
