@@ -1,7 +1,7 @@
 ---
 title: Asennusohjeet
 chapter: 1
-description: Asennusohjeet Gitille
+desc: Asennusohjeet Gitille
 ---
 
 # Git asennusohjeet

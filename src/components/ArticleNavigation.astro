@@ -1,5 +1,14 @@
 ---
-const { title, chapters } = Astro.props;
+interface Props {
+  title: string;
+  chapters: {
+    slug: string;
+    data: {
+      title: string;
+    };
+  }[];
+}
+const { title, chapters }: Props = Astro.props;
 const path = Astro.url.pathname;
 let currentChapterIndex = chapters.findIndex((c) => path.includes(c.slug));
 ---

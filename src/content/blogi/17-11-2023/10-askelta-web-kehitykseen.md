@@ -2,7 +2,7 @@
 title: 10 askelta web kehitykseen
 author: wesenbergg
 readTime: 5
-puDate: '17.11.2023'
+pubDate: '17.11.2023'
 desc: 'Web-kehityksen urapolun aloittaminen voi tuntua aluksi haastavalta, mutta se on saavutettavissa vaiheittain. Tässä on muutama askel, jotka voivat auttaa sinua aloittamaan web-kehityksen urapolun.'
 tags: ['node', 'js', 'ohjelmistokehitys', 'package manager', 'vertailu', 'devex', 'dx']
 ---

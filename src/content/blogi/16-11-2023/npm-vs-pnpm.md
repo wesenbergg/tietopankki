@@ -2,7 +2,7 @@
 title: npm vs pnpm
 author: wesenbergg
 readTime: 4
-puDate: '16.11.2023'
+pubDate: '16.11.2023'
 desc: '5 syytä miksi pnpm lyö npm:n kanvaasille'
 tags: ['node', 'js', 'ohjelmistokehitys', 'package manager', 'vertailu', 'devex', 'dx']
 ---
