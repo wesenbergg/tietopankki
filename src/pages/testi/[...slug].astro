@@ -1,7 +1,12 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import {
+  type CollectionEntry,
+  type CollectionKey,
+  getCollection,
+} from "astro:content";
 import CourseChapterLayout from "../../layouts/CourseChapterLayout.astro";
 
+const collectionKey: CollectionKey = "testi";
 export const getStaticPaths = async () => {
   const posts = await getCollection("testi");
 
@@ -10,14 +15,14 @@ export const getStaticPaths = async () => {
     props: post,
   }));
 };
-type Props = CollectionEntry<"testi">;
+type Props = CollectionEntry<typeof collectionKey>;
 
 const { collection, render } = Astro.props;
 
 const { Content, headings } = await render();
 ---
 
-<CourseChapterLayout title={collection} {headings}>
+<CourseChapterLayout title={collection} {collectionKey} {headings}>
   <Content />
 </CourseChapterLayout>
 

@@ -1,6 +1,7 @@
 ---
 title: 'HTML alkeet'
-pubDate: 'Oct 5 2023'
+chapter: 1
+desc: 'Tähän on heitetty vähän alkeita HTML:stä'
 ---
 
 # Tehtävät

@@ -12,7 +12,7 @@
         {#if content.depth === 1}
           <li>
             <a
-              href={`/${content.collection}/${content.slug}`}
+              href={`/kurssit/${content.collection}/${content.slug}`}
               class={`block text-purple-600 hover:underline pl-2 border-purple-500 hover:border-l-2`}
               >{content.data.title}</a
             >
@@ -20,7 +20,7 @@
               {#each findSubChapters(content.slug) as cont}
                 <li>
                   <a
-                    href={`/${cont.collection}/${cont.slug}`}
+                    href={`/kurssit/${cont.collection}/${cont.slug}`}
                     class={`flex w-full text-purple-600 hover:underline pl-2 border-purple-500 hover:border-l-2`}
                     >{cont.data.title}</a
                   >

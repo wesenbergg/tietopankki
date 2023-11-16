@@ -10,7 +10,7 @@ let currentChapterIndex = chapters.findIndex((c) => path.includes(c.slug));
     currentChapterIndex > 0 && (
       <div>
         <p>previous</p>
-        <a href={`/${title}/${chapters[currentChapterIndex - 1].slug}`}>
+        <a href={`/kurssit/${title}/${chapters[currentChapterIndex - 1].slug}`}>
           {chapters[currentChapterIndex - 1].data.title}
         </a>
       </div>
@@ -20,7 +20,7 @@ let currentChapterIndex = chapters.findIndex((c) => path.includes(c.slug));
     currentChapterIndex < chapters.length - 1 && (
       <div>
         <p>next</p>
-        <a href={`/${title}/${chapters[currentChapterIndex + 1].slug}`}>
+        <a href={`/kurssit/${title}/${chapters[currentChapterIndex + 1].slug}`}>
           {chapters[currentChapterIndex + 1].data.title}
         </a>
       </div>

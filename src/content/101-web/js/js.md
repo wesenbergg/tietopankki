@@ -1,6 +1,7 @@
 ---
 title: 'JS alkeet'
-pubDate: 'Oct 10 2023'
+chapter: 1
+desc: Tervetuloa JS-perusteiden kurssille!
 ---
 
 # Tehtäviä

@@ -2,21 +2,22 @@
 import type { MarkdownHeading } from "astro";
 import TableOfContents from "../components/client/TableOfContents.svelte";
 import generateToc from "../utils/generateToc.ts";
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionKey } from "astro:content";
 import CourseContents from "../components/client/CourseContents.svelte";
 import Layout from "./Layout.astro";
 import ArticleNavigation from "../components/ArticleNavigation.astro";
 
 export interface Props {
   title?: string;
+  collectionKey: string;
   description?: string;
   headings: MarkdownHeading[];
 }
-const { title, description, headings } = Astro.props;
+const { title, description, headings, collectionKey = "testi" } = Astro.props;
 const toc = generateToc(headings);
 
 const getCourseNav = async () => {
-  const posts = await getCollection("testi");
+  const posts = await getCollection(collectionKey as CollectionKey);
 
   return posts.map((post) => ({
     id: post.id,
@@ -38,3 +39,37 @@ let chapters = await getCourseNav();
     </ArticleNavigation>
   </article>
 </Layout>
+
+<style is:inline>
+  article {
+    min-height: calc(100vh - 64px);
+    > h1 {
+      font-size: x-large;
+      padding: 1rem 0;
+    }
+    > h2 {
+      font-size: large;
+      padding: 1rem 0;
+    }
+    > ol {
+      list-style: numeric;
+    }
+    > ol > li > ol {
+      list-style-type: lower-alpha;
+    }
+    > ul,
+    > ol,
+    > ol ol,
+    > ol ul,
+    > ul ul,
+    > ul ol {
+      padding-left: 1.5rem;
+    }
+    > ul {
+      list-style-type: disc;
+    }
+    > p {
+      padding-bottom: 1rem;
+    }
+  }
+</style>

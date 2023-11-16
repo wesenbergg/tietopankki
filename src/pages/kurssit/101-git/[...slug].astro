@@ -1,0 +1,27 @@
+---
+import {
+  type CollectionEntry,
+  type CollectionKey,
+  getCollection,
+} from "astro:content";
+import CourseChapterLayout from "../../../layouts/CourseChapterLayout.astro";
+
+const collectionKey: CollectionKey = "101-git";
+
+export const getStaticPaths = async () => {
+  const posts = await getCollection("101-git");
+
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+};
+type Props = CollectionEntry<typeof collectionKey>;
+
+const { collection, render } = Astro.props;
+const { Content, headings } = await render();
+---
+
+<CourseChapterLayout title={collection} {collectionKey} {headings}>
+  <Content />
+</CourseChapterLayout>
