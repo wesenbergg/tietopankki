@@ -1,4 +1,5 @@
 ---
+import Link from "./common/Link.astro";
 interface Props {
   title: string;
   chapters: {
@@ -19,9 +20,11 @@ let currentChapterIndex = chapters.findIndex((c) => path.includes(c.slug));
     currentChapterIndex > 0 && (
       <div>
         <p>previous</p>
-        <a href={`/kurssit/${title}/${chapters[currentChapterIndex - 1].slug}`}>
+        <Link
+          href={`/kurssit/${title}/${chapters[currentChapterIndex - 1].slug}`}
+        >
           {chapters[currentChapterIndex - 1].data.title}
-        </a>
+        </Link>
       </div>
     )
   }
@@ -29,9 +32,11 @@ let currentChapterIndex = chapters.findIndex((c) => path.includes(c.slug));
     currentChapterIndex < chapters.length - 1 && (
       <div>
         <p>next</p>
-        <a href={`/kurssit/${title}/${chapters[currentChapterIndex + 1].slug}`}>
+        <Link
+          href={`/kurssit/${title}/${chapters[currentChapterIndex + 1].slug}`}
+        >
           {chapters[currentChapterIndex + 1].data.title}
-        </a>
+        </Link>
       </div>
     )
   }

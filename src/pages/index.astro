@@ -1,9 +1,10 @@
 ---
+import Heading1 from "@components/headings/Heading1.astro";
 import Layout from "../layouts/Layout.astro";
+import Link from "@components/common/Link.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main>
-    <a href={`/blogi`}>first post</a>
-  </main>
+  <Heading1>Home</Heading1>
+  <Link href={`/kurssit`}>Katso kurssit</Link>
 </Layout>

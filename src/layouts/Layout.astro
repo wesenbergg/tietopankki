@@ -7,7 +7,7 @@ export interface Props {
   description?: string;
 }
 
-const { title = "HÖTÖPÖLLÖ", description = "Ei pöllömpi kurssi" } = Astro.props;
+const { title = "koodi", description = "Ei pöllömpi kurssi" } = Astro.props;
 ---
 
 <!doctype html>
@@ -17,9 +17,12 @@ const { title = "HÖTÖPÖLLÖ", description = "Ei pöllömpi kurssi" } = Astro.
   </head>
   <body>
     <Navigation />
-    <slot />
+    <main class={"max-w-screen-xl mx-auto min-h-screen"}>
+      <slot />
+    </main>
+
     <footer class="w-full bottom-0 p-4 bg-slate-900 text-slate-100 text-center">
-      <p>&copy; 2023 HÖTÖPÖLLÖ. Tehty ❤️:lla.</p>
+      <p>&copy; 2023 koodi. Tehty ❤️:lla.</p>
     </footer>
   </body>
 </html>

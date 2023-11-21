@@ -1,21 +1,21 @@
 ---
-import Layout from "../../../layouts/Layout.astro";
+import Layout from "@layouts/Layout.astro";
+import Heading1 from "@components/headings/Heading1.astro";
 import { getCollection } from "astro:content";
+import Link from "@components/common/Link.astro";
 
 const posts = await getCollection("101-web");
 ---
 
 <Layout title="Tervetuloa 101 Web kurssille!">
-  <main>
-    <h1>Web Perusteet</h1>
-    <ul>
-      {
-        posts.map((p) => (
-          <li>
-            <a href={`${p.slug}`}>{p.data.title}</a>
-          </li>
-        ))
-      }
-    </ul>
-  </main>
+  <Heading1>Web Perusteet</Heading1>
+  <ul>
+    {
+      posts.map((p) => (
+        <li>
+          <Link href={`/kurssit/101-web/${p.slug}`}>{p.data.title}</Link>
+        </li>
+      ))
+    }
+  </ul>
 </Layout>

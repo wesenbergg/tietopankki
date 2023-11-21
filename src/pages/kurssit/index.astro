@@ -1,20 +1,23 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Heading2 from "@components/headings/Heading2.astro";
+import Heading1 from "@components/headings/Heading1.astro";
+import Layout from "@layouts/Layout.astro";
+import Link from "@components/common/Link.astro";
 ---
 
 <Layout title="Kurssit">
-  <h1>Kurssit</h1>
+  <Heading1>Kurssit</Heading1>
   <p>
     Niinku eräs koodari aikoinaan sanoi *Keep it stupid simple*. Loput oli
     historiaa. Tämän sanoman innoittamana kurssin kontentti pyritään pitämään
     mahdollisimman yksinkertaisena.
   </p>
-  <h2>Aloittelijaystävälliset kurssit</h2>
+  <Heading2>Aloittelijaystävälliset kurssit</Heading2>
   <ul>
-    <li><a href="/kurssit/101-web">Web ohjelmointi 101</a></li>
-    <li><a href="/kurssit/101-git">Git-versiohallinta</a></li>
+    <li><Link href="/kurssit/101-web">Web ohjelmointi 101</Link></li>
+    <li><Link href="/kurssit/101-git">Git-versiohallinta</Link></li>
   </ul>
-  <h2>Haluatko lisää haastetta</h2>
+  <Heading2>Haluatko lisää haastetta</Heading2>
   <p>
     Odota vähän. Ehkä sitä joku päivä jaksaa kirjoittaa vähän haastavempaa
     materiaalia.
