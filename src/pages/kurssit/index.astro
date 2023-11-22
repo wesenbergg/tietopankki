@@ -3,14 +3,15 @@ import Heading2 from "@components/headings/Heading2.astro";
 import Heading1 from "@components/headings/Heading1.astro";
 import Layout from "@layouts/Layout.astro";
 import Link from "@components/common/Link.astro";
+import SingleAnswerQuiz from "@components/client/SingleAnswerQuiz.svelte";
 ---
 
 <Layout title="Kurssit">
   <Heading1>Kurssit</Heading1>
   <p>
-    Niinku eräs koodari aikoinaan sanoi *Keep it stupid simple*. Loput oli
-    historiaa. Tämän sanoman innoittamana kurssin kontentti pyritään pitämään
-    mahdollisimman yksinkertaisena.
+    Oletko kiinnostunut luomaan dynaamisia ja houkuttelevia verkkosivustoja tai
+    -sovelluksia? Tämä kurssi tarjoaa sinulle vankat perusteet web-kehityksestä
+    ja johdannon nykyaikaisiin teknologioihin.
   </p>
   <Heading2>Aloittelijaystävälliset kurssit</Heading2>
   <ul>
@@ -22,4 +23,5 @@ import Link from "@components/common/Link.astro";
     Odota vähän. Ehkä sitä joku päivä jaksaa kirjoittaa vähän haastavempaa
     materiaalia.
   </p>
+  <SingleAnswerQuiz client:visible />
 </Layout>
